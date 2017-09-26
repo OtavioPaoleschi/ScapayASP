@@ -1,0 +1,40 @@
+﻿@model ProjetoAM2017_ASP.Models.Contato
+
+
+<h2>@ViewBag.Title</h2>
+<h5>@ViewBag.Message</h5>
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td>@Html.LabelFor(model => model.Codigo)</td>
+            <td>@Html.TextBoxFor(model => model.Codigo)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Email)</td>
+            <td>@Html.TextBoxFor(model => model.Email)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Nome)</td>
+            <td>@Html.TextBoxFor(model => model.Nome)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Tel)</td>
+            <td>@Html.TextBoxFor(model => model.Tel)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Comentarios)</td>
+            <td>@Html.TextAreaFor(model => model.Comentarios)</td>
+        </tr>
+
+        <tr>
+            <td colspan="2" style="text-align:right"><input type="submit" value="ENVIAR"/></td>
+        </tr>
+    </table>
+    <br/>
+}

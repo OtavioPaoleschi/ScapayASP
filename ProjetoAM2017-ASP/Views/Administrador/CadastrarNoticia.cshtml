@@ -1,0 +1,32 @@
+﻿@model ProjetoAM2017_ASP.Models.Noticia
+
+@{
+    ViewBag.Title = "Nova Publicação";
+}
+
+<h2>@ViewBag.Title</h2>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <tr>
+            <td>@Html.LabelFor(model => model.Codigo)</td>
+            <td>@Html.TextBoxFor(model => model.Codigo)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Titulo)</td>
+            <td>@Html.TextBoxFor(model => model.Titulo)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.LabelFor(model => model.Texto)</td>
+            <td>@Html.TextAreaFor(model => model.Texto)</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align:right"><input type="submit" value="PUBLICAR" /></td>
+        </tr>
+    </table>
+    <br/>
+    @Html.ActionLink("Cancelar", "Index")
+}
+

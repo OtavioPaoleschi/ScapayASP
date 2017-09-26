@@ -1,0 +1,27 @@
+﻿@model IEnumerable<ProjetoAM2017_ASP.Models.Noticia>
+
+@{ 
+    ViewBag.Title = "Notícias Cadastradas";
+}
+
+<h2>@ViewBag.Title</h2>
+<table class="table">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Codigo)</th>
+        <th>@Html.DisplayNameFor(model => model.Titulo)</th>
+        <th>@Html.DisplayNameFor(model => model.Texto)</th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <td>@Html.DisplayFor(modelItem => item.Codigo)</td>
+        <td>@Html.DisplayFor(modelItem => item.Titulo)</td>
+        <td>@Html.DisplayFor(modelItem => item.Texto)</td>
+        <td>
+            @Html.ActionLink("Editar", "EditarNoticia", new { id = item.Codigo })|
+            @Html.ActionLink("Excluir", "ExcluirNoticias", new { id = item.Codigo })
+        </td>
+    }
+</table>
+<br />
+@Html.ActionLink("Voltar", "Index")
